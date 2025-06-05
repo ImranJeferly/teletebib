@@ -1,0 +1,260 @@
+// ==== HEADER SECTION ====
+TeleTebib
+// Logo text (unchanged)
+
+// ==== HERO SECTION ====
+Accessible, expert healthcare — anytime, anywhere
+Connect online with certified doctors and specialists for consultations, follow-ups, and long-term care.
+Find a doctor near me
+Your session is booked
+
+// ==== TRUST INDICATORS SECTION ====
+Top Rated Telemedicine App
+Platform of the Year 2024
+MedTech Breakthrough
+4.6
+App Store Rating
+Forbes
+Leading Digital Health Platform of 2024
+500K+
+Patients served
+
+// ==== WHY CHOOSE ONLINE PSYCHIATRY SECTION ====
+Why choose online care?
+Flexible scheduling
+Book, reschedule, or cancel appointments with just a few clicks — no waiting rooms.
+Switch doctors anytime
+Choose from a network of specialists and switch anytime without hassle.
+Support when you need it
+Chat with support or send questions directly to your care provider between appointments.
+Save on time and costs
+TeleTebib visits cost up to 50% less than traditional clinic visits — and insurance is accepted.
+Get started
+Using insurance? Check your coverage
+
+// ==== QUALITY CARE SECTION ====
+Trusted care.
+Real outcomes.
+83%
+of users see a doctor within 3 days of registering*
+74%
+of follow-up patients report symptom improvement within 3 months*
+72%
+of users feel more in control of their health within 90 days*
+*Based on user-reported outcomes from 2021–2024.
+
+// ==== WHY CHOOSE TELETEBIB SECTION ====
+Why choose TeleTebib?
+Top-tier specialists
+Our team includes licensed professionals across dozens of specialties — with an average satisfaction rating of 4.8/5.
+Custom care plans
+Every visit includes a tailored approach — whether you're managing a condition, following up, or getting a second opinion.
+Seamless experience
+Secure platform, simple scheduling, and sessions you can attend from anywhere.
+Get started
+
+// ==== SPECIALTIES SECTION ====
+What specialties we offer
+Connect with doctors and specialists in a wide range of fields — all from one platform.
+
+General Practitioner, Pediatrician, Internal Medicine, Cardiologist, Endocrinologist, Pulmonologist, Gastroenterologist, Neurologist, Neurosurgeon, Ophthalmologist, ENT Specialist, Dermatologist, Rheumatologist, Allergist, Nephrologist, Gynecologist, Obstetrician, Urologist, Psychiatrist, Psychologist, General Surgeon, Orthopedic Surgeon, Traumatologist, Oncologist, Hematologist, Infectious Disease, Sexual Health, Physiotherapist, Nutritionist
+
+// ==== COMMON CONDITIONS SECTION ====
+Common conditions and symptoms
+we diagnose and treat
+We support treatment across a wide range of health concerns. After a consultation, your doctor may recommend lab tests, prescriptions, or follow-up care.
+
+Anxiety
+Persistent worry
+
+Difficulty focusing
+
+Restlessness
+
+Dizziness or shortness of breath
+
+Depression
+Feeling down or hopeless
+
+Isolation or withdrawal
+
+Lack of motivation
+
+Suicidal thoughts
+
+Bipolar Disorder
+High energy or irritability
+
+Mood swings
+
+Fatigue or low energy
+
+Prolonged sadness or anxiety
+
+Panic Disorder
+Intense fear episodes
+
+Heart palpitations
+
+Chest pain
+
+Avoiding situations that trigger panic
+
+Insomnia
+Trouble falling/staying asleep
+
+Daytime fatigue
+
+Mood changes
+
+Poor memory
+
+ADHD
+Difficulty concentrating
+
+Impulsive decisions
+
+Restlessness
+
+Time mismanagement
+
+Other Conditions
+Stress, burnout
+
+Alcohol-related issues
+
+OCD
+
+PTSD
+
+And more
+
+PTSD
+Nightmares or flashbacks
+
+Avoiding reminders
+
+Emotional numbness
+
+Hypervigilance
+
+Get started
+
+// ==== HOW WE CAN HELP SECTION ====
+How we can help
+Not sure where to begin? You can always update your care plan or switch services as your needs evolve.
+
+Medication
+$95/month
+Ongoing medication management with licensed doctors
+Get started
+
+Individual Therapy
+Starting at $225/month
+Private sessions with licensed therapists tailored to your goals
+Get started
+
+Couples Therapy
+$325/month
+Strengthen your relationship with joint guidance from experienced therapists
+Get started
+
+Therapy & Medication
+Starting at $305/month
+A comprehensive approach combining therapy with medication
+Get started
+
+// ==== MEDICATION REMINDER SECTION ====
+Stay on track with your meds
+Our in-app reminder system helps you stay consistent. Set up personalized alerts and keep your treatment on course.
+
+Flexible reminders
+Customizable alerts based on your prescription schedule
+
+Adherence tracking
+View your intake history and share with your doctor
+
+Get started
+
+TeleTebib
+Time to take your medication📌:
+💊 Sertraline (50mg)
+Mark as taken | Remind me later
+
+// ==== GETTING STARTED SECTION ====
+Getting started
+
+Step 1: Choose a service
+Explore our services and find the one that fits. You can always change it later.
+
+Step 2: Select your doctor and book
+Review doctor profiles, check availability, and confirm your first session online.
+
+Step 3: Receive a medical evaluation
+During your visit, your provider will assess your health and create a plan just for you.
+
+Get started
+Get a full health evaluation
+
+// ==== ARE YOU A DOCTOR SECTION ====
+Are you a doctor?
+We’re accepting early sign-ups from healthcare providers — join our growing team and offer care to patients across the country.
+
+Apply to join our network
+Limited early access available
+
+2,000+
+Providers registered
+
+50+
+Regions covered
+
+96%
+Provider satisfaction
+
+// ==== TESTIMONIALS SECTION ====
+Lives changed
+
+I discovered TeleTebib when I couldn't see my doctor in person. They helped me through my hardest days and gave me real support.
+— Bri
+
+My provider listens, supports, and adjusts my treatment when needed. I'm in better health now than I’ve been in years.
+— Sasha
+
+TeleTebib made healthcare feel accessible. I now have the right treatment, the right provider, and ongoing support.
+— Isabel
+
+// ==== FAQ SECTION ====
+Frequently asked questions // Section heading
+
+// FAQ 1
+What is TeleTebib? // Question
+TeleTebib is an online mental health care provider that offers 1-on-1 therapy, couples therapy, and medication prescription service plans. Plans include regular virtual sessions with our qualified and compassionate therapists and prescribers — as well as personalized treatment plans, progress tracking, and goal setting. We offer long or short-term care, and have worked to make our costs as low as possible for our clients. // Answer part 1
+TeleTebib treats many mental health conditions, including: anxiety, depression, insomnia, postpartum depression, menopausal depression, ADHD (in certain states), trauma and PTSD, bipolar disorder (in certain states), alcohol dependence (in certain states). // Answer part 2
+We can also support: relationship issues and divorce, stress management, anger management, LGBTQI+ experiences, grief and loss, traumatic life events, confidence and self-esteem, phobias, coping with illnesses. // Answer part 3
+
+// FAQ 2
+Can I use insurance? // Question
+Yes, TeleTebib works with many major insurance providers. We can help verify your benefits before you start. Our services may be covered in full or partially by your health insurance provider. We also accept HSA/FSA payments for those who qualify. // Answer
+
+// FAQ 3
+How does TeleTebib work? // Question
+Getting started is simple. First, choose a service that fits your needs. Then, browse available providers and select one who matches your preferences. Book a convenient appointment time, and meet with your provider online via our secure platform. Your provider will work with you to develop a personalized treatment plan tailored to your specific needs. // Answer
+
+// FAQ 4
+What medications does TeleTebib offer? // Question
+Our licensed prescribers can prescribe a wide range of medications to treat various mental health conditions, including antidepressants, anti-anxiety medications, mood stabilizers, and medications for ADHD (where legally permitted). Note that we cannot prescribe controlled substances in all states, and certain medications may have restrictions based on your location. // Answer
+
+// FAQ 5
+How often can I meet with my therapist or prescriber? // Question
+The frequency of sessions depends on your specific needs and the treatment plan you develop with your provider. Typically, therapy sessions might be weekly or bi-weekly, while medication management appointments might be monthly after an initial period of more frequent check-ins. Your provider will recommend a schedule that's right for your situation. // Answer
+
+// FAQ 6
+Who is TeleTebib for? // Question
+TeleTebib is for adults who are looking for convenient, high-quality mental healthcare. Our services are designed for people seeking therapy or medication management for conditions like anxiety, depression, insomnia, ADHD, and more. We're a good fit for busy professionals, parents, students, or anyone who values the flexibility of online care. Currently, we serve adults 18+ in most US states. // Answer
+
+
+// ==== FOOTER SECTION ====
+TeleTebib // Logo text
+© 2024 TeleTebib, Inc. All rights reserved. // Copyright text
+TeleTebib does not offer emergency services. In the event of a mental health emergency, call 988 or the National Suicide Prevention Lifeline at 1-800-273-8255. // Legal notice

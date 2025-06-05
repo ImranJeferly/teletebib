@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  /* Simplified color palette - only essential colors */
+  --primary: #1A56DB;
+  --primary-foreground: #FFFFFF;
+  --foreground: #0F2C71;
+  --background: #F5F9FF;
+  --card: #FFFFFF;
+  --card-foreground: #0F2C71;
+  --muted: #EBF3FF;
+  --muted-foreground: #6B7280;
+  --border: #D1E3FF;
+  --accent: #E2EEFF;
+  --accent-foreground: #0F2C71;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --ring: #1A56DB;
+  
+  /* Radius */
+  --radius: 0.5rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+/* Ensure buttons are clickable */
+button, 
+.button,
+[role="button"] {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Make sure no decorative elements block interactive elements */
+.decorative {
+  pointer-events: none;
+}
+
+@keyframes notification-pulse {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-20px);
+  }
+  10% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(-20px);
+  }
+}
+
+.animate-notificationPulse {
+  animation: notification-pulse 8s ease-in-out infinite;
+}
+
+@keyframes notification-shadow {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.animate-notificationShadow {
+  animation: notification-shadow 8s ease-in-out infinite;
+}
