@@ -17,11 +17,18 @@ import React, {
   useRef,
 } from "react";
 
-import { Button, ButtonProps } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+import type { VariantProps } from "class-variance-authority";
 
 type Api = {
   fire: (options?: ConfettiOptions) => void;
 };
+
+// Define ButtonProps type since it's not exported from the button component
+type ButtonProps = React.ComponentPropsWithRef<"button"> & 
+  VariantProps<any> & {
+    asChild?: boolean;
+  };
 
 type Props = React.ComponentPropsWithRef<"canvas"> & {
   options?: ConfettiOptions;
