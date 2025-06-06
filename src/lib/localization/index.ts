@@ -172,7 +172,31 @@ export interface Translations {
       infectiousDisease: string;
       sexualHealth: string;
       physiotherapist: string;
+    };  };
+  
+  // Our Services Section
+  ourServices: {
+    title: string;
+    subtitle: string;
+    services: {
+      medication: {
+        title: string;
+        description: string;
+      };
+      individualTherapy: {
+        title: string;
+        description: string;
+      };
+      couplesTherapy: {
+        title: string;
+        description: string;
+      };
+      therapyMedication: {
+        title: string;
+        description: string;
+      };
     };
+    cta: string;
   };
   
   // How It Works Section
@@ -589,9 +613,32 @@ export const en: Translations = {
       traumatologist: "Traumatologist",
       hematologist: "Hematologist",
       infectiousDisease: "Infectious Disease",
-      sexualHealth: "Sexual Health",
-      physiotherapist: "Physiotherapist",
+      sexualHealth: "Sexual Health",      physiotherapist: "Physiotherapist",
     },
+  },
+  
+  ourServices: {
+    title: "Our Services",
+    subtitle: "Comprehensive care options tailored to your needs. Choose the service that fits your health goals.",
+    services: {
+      medication: {
+        title: "Medication Management",
+        description: "Ongoing medication management with licensed doctors",
+      },
+      individualTherapy: {
+        title: "Individual Therapy",
+        description: "Private sessions tailored to your goals",
+      },
+      couplesTherapy: {
+        title: "Couples Therapy",
+        description: "Strengthen your relationship with experienced therapists",
+      },
+      therapyMedication: {
+        title: "Therapy & Medication",
+        description: "Comprehensive approach combining therapy with medication",
+      },
+    },
+    cta: "Join us",
   },
   
   howItWorks: {
@@ -997,9 +1044,32 @@ export const az: Translations = {
       traumatologist: "Travmatoloq",
       hematologist: "Hematoloq",
       infectiousDisease: "İnfeksionist",
-      sexualHealth: "Cinsi sağlamlıq",
-      physiotherapist: "Fizioterapevt",
+      sexualHealth: "Cinsi sağlamlıq",      physiotherapist: "Fizioterapevt",
     },
+  },
+  
+  ourServices: {
+    title: "Xidmətlərimiz",
+    subtitle: "Ehtiyaclarınıza uyğun hərtərəfli qayğı seçimləri. Sağlamlıq məqsədlərinizə uyğun xidməti seçin.",
+    services: {
+      medication: {
+        title: "Dərman Müalicəsi",
+        description: "Lisenziyalı həkimlərlə davamlı dərman nəzarəti",
+      },
+      individualTherapy: {
+        title: "Fərdi Terapiya",
+        description: "Məqsədlərinizə uyğun fərdi seanslar",
+      },
+      couplesTherapy: {
+        title: "Cütlük Terapiyası",
+        description: "Təcrübəli terapevtlərlə münasibətlərinizi gücləndirin",
+      },
+      therapyMedication: {
+        title: "Terapiya və Dərman Müalicəsi",
+        description: "Terapiya və dərman müalicəsinin birləşdirilmiş yanaşması",
+      },
+    },
+    cta: "Bizə qoşulun",
   },
   
   howItWorks: {
@@ -1405,9 +1475,32 @@ export const ru: Translations = {
       traumatologist: "Травматолог",
       hematologist: "Гематолог",
       infectiousDisease: "Инфекционист",
-      sexualHealth: "Специалист по сексуальному здоровью",
-      physiotherapist: "Физиотерапевт",
+      sexualHealth: "Специалист по сексуальному здоровью",      physiotherapist: "Физиотерапевт",
     },
+  },
+  
+  ourServices: {
+    title: "Наши Услуги",
+    subtitle: "Комплексные варианты ухода, адаптированные к вашим потребностям. Выберите услугу, которая соответствует вашим целям здоровья.",
+    services: {
+      medication: {
+        title: "Управление Лекарствами",
+        description: "Постоянное управление лекарствами с лицензированными врачами",
+      },
+      individualTherapy: {
+        title: "Индивидуальная Терапия",
+        description: "Частные сессии, адаптированные к вашим целям",
+      },
+      couplesTherapy: {
+        title: "Парная Терапия",
+        description: "Укрепите отношения с опытными терапевтами",
+      },
+      therapyMedication: {
+        title: "Терапия и Лекарства",
+        description: "Комплексный подход, сочетающий терапию с медикаментами",
+      },
+    },
+    cta: "Присоединиться к нам",
   },
   
   howItWorks: {

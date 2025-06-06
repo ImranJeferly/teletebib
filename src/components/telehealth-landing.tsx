@@ -1688,16 +1688,16 @@ export function TelehealthLanding() {
             </Button>
           </div>
         </div>
-      </section>      {/* How we can help section - Updated heading */}
+      </section>      {/* Our Services section - Corrected heading and translations */}
       <section className="py-20 overflow-hidden" style={{ backgroundColor: "#FFFCF4", maxWidth: "100vw" }}>
         <div className="container mx-auto px-4 overflow-hidden">
           {/* Standardized section heading to consistent 5xl size */}
           <div className="text-center mb-12">
             <h2 className={mainHeadingClass} style={{ color: FOREGROUND }}>
-              {t.howItWorks.title}
+              {t.ourServices.title}
             </h2>
             <p className="max-w-3xl mx-auto text-center font-light text-lg" style={{ color: FOREGROUND_LIGHT }}>
-              {t.howItWorks.subtitle}
+              {t.ourServices.subtitle}
             </p>
           </div>
           
@@ -1710,9 +1710,8 @@ export function TelehealthLanding() {
                   <ClipboardList size={42} className="stroke-[1.5]" style={{ color: PRIMARY }} />
                 </div>
               </div>
-              
-              <h3 className="text-2xl font-bold mb-2" style={{ color: FOREGROUND }}>
-                Dərman Müalicəsi
+                <h3 className="text-2xl font-bold mb-2" style={{ color: FOREGROUND }}>
+                {t.ourServices.services.medication.title}
               </h3>
               
               {/* <p className="font-medium mb-3" style={{ color: PRIMARY }}>
@@ -1720,7 +1719,7 @@ export function TelehealthLanding() {
               </p> */}
               
               <p className="text-sm font-light mb-6" style={{ color: FOREGROUND_LIGHT }}>
-                Lisenziyalı həkimlərlə davamlı dərman nəzarəti
+                {t.ourServices.services.medication.description}
               </p>
               
               <Button 
@@ -1729,7 +1728,7 @@ export function TelehealthLanding() {
                 style={{ color: PRIMARY, borderColor: PRIMARY }}
                 onClick={scrollToWaitlist}
               >
-                {t.whyTeleTebib.cta}
+                {t.ourServices.cta}
               </Button>
             </div>
             
@@ -1740,9 +1739,8 @@ export function TelehealthLanding() {
                   <Network size={42} className="stroke-[1.5]" style={{ color: PRIMARY }} />
                 </div>
               </div>
-              
-              <h3 className="text-2xl font-bold mb-2" style={{ color: FOREGROUND }}>
-                Fərdi Terapiya
+                <h3 className="text-2xl font-bold mb-2" style={{ color: FOREGROUND }}>
+                {t.ourServices.services.individualTherapy.title}
               </h3>
               
               {/* <p className="font-medium mb-3" style={{ color: PRIMARY }}>
@@ -1750,7 +1748,7 @@ export function TelehealthLanding() {
               </p> */}
               
               <p className="text-sm font-light mb-6" style={{ color: FOREGROUND_LIGHT }}>
-                Məqsədlərinizə uyğun fərdi seanslar
+                {t.ourServices.services.individualTherapy.description}
               </p>
               
               <Button 
@@ -1759,7 +1757,7 @@ export function TelehealthLanding() {
                 style={{ color: PRIMARY, borderColor: PRIMARY }}
                 onClick={scrollToWaitlist}
               >
-                Bizə qoşulun
+                {t.ourServices.cta}
               </Button>
             </div>
             
@@ -1770,9 +1768,8 @@ export function TelehealthLanding() {
                   <Users size={42} className="stroke-[1.5]" style={{ color: PRIMARY }} />
                 </div>
               </div>
-              
-              <h3 className="text-2xl font-bold mb-2" style={{ color: FOREGROUND }}>
-                Cütlük Terapiyası
+                <h3 className="text-2xl font-bold mb-2" style={{ color: FOREGROUND }}>
+                {t.ourServices.services.couplesTherapy.title}
               </h3>
               
               {/* <p className="font-medium mb-3" style={{ color: PRIMARY }}>
@@ -1780,7 +1777,7 @@ export function TelehealthLanding() {
               </p> */}
               
               <p className="text-sm font-light mb-6" style={{ color: FOREGROUND_LIGHT }}>
-                Təcrübəli terapevtlərlə münasibətlərinizi gücləndirin
+                {t.ourServices.services.couplesTherapy.description}
               </p>
               
               <Button 
@@ -1789,7 +1786,7 @@ export function TelehealthLanding() {
                 style={{ color: PRIMARY, borderColor: PRIMARY }}
                 onClick={scrollToWaitlist}
               >
-                Bizə qoşulun
+                {t.ourServices.cta}
               </Button>
             </div>
             
@@ -1801,9 +1798,8 @@ export function TelehealthLanding() {
                   <Heart size={42} className="stroke-[1.5]" style={{ color: PRIMARY }} />
                 </div>
               </div>
-              
-              <h3 className="text-2xl font-bold mb-2" style={{ color: FOREGROUND }}>
-                Terapiya və Dərman Müalicəsi
+                <h3 className="text-2xl font-bold mb-2" style={{ color: FOREGROUND }}>
+                {t.ourServices.services.therapyMedication.title}
               </h3>
               
               {/* <p className="font-medium mb-3" style={{ color: PRIMARY }}>
@@ -1811,7 +1807,7 @@ export function TelehealthLanding() {
               </p> */}
               
               <p className="text-sm font-light mb-6" style={{ color: FOREGROUND_LIGHT }}>
-                Terapiya və dərman müalicəsinin birləşdirilmiş yanaşması
+                {t.ourServices.services.therapyMedication.description}
               </p>
               
               <Button 
@@ -1820,7 +1816,7 @@ export function TelehealthLanding() {
                 style={{ color: PRIMARY, borderColor: PRIMARY }}
                 onClick={scrollToWaitlist}
               >
-                Bizə qoşulun
+                {t.ourServices.cta}
               </Button>
             </div>
           </div>
