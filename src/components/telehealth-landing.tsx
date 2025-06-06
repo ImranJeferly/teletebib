@@ -76,11 +76,10 @@ export function TelehealthLanding() {
   const primaryButtonClass = "rounded-full py-4 px-6 text-sm font-medium shadow-sm text-white";
   const secondaryButtonClass = "rounded-full py-4 px-10 text-sm font-medium border";
   const outlineButtonClass = "rounded-full py-3 px-2 text-sm font-medium";
-  
-  // Heading size and spacing classes - Updated to ensure ALL headings are 5xl
-  const mainHeadingClass = "text-5xl leading-16 font-bold mb-6"; // Removed the responsive text-4xl
-  const sectionHeadingClass = "text-5xl font-bold mb-6"; // Updated to text-5xl to match
-  const subHeadingClass = "text-xl font-semibold mb-4";  // State for FAQ accordion
+    // Heading size and spacing classes - Responsive for mobile
+  const mainHeadingClass = "text-3xl sm:text-4xl lg:text-5xl leading-tight font-bold mb-6"; // Responsive sizing
+  const sectionHeadingClass = "text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"; // Responsive sizing
+  const subHeadingClass = "text-xl font-semibold mb-4";// State for FAQ accordion
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
   // State for email inputs
   const [email, setEmail] = useState("");
@@ -2295,9 +2294,6 @@ export function TelehealthLanding() {
                 <img src="/w_logo.png" alt="TeleTebib Logo" className="h-6 w-auto" />
                 <span className="text-lg font-semibold text-white">{t.footer.brandName}</span>
               </div>
-              <p className="text-sm font-light text-white opacity-90">
-                {t.footer.copyright}
-              </p>
             </div>
             
             {/* Social Media Only */}            <div className="flex space-x-4">
@@ -2320,9 +2316,7 @@ export function TelehealthLanding() {
             </div>
           </div>
             {/* Legal notice - Important to keep for mental health services */}          <div className="mt-8 text-center">
-            <p className="text-xs font-light text-white/80">
-              {t.footer.emergencyNotice}
-            </p>
+            
           </div>
         </div>
       </footer>      {/* Success Popup */}
