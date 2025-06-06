@@ -837,7 +837,7 @@ export function TelehealthLanding() {
                 }}
               >
                 <img 
-                  src="/patient.jpg" 
+                  src="/patient.png" 
                   alt="Patient on video call"
                   className="w-full h-full object-cover"
                 />
