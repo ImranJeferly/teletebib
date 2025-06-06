@@ -88,9 +88,8 @@ export function TelehealthLanding() {
   const [isSubmittingWaitlist, setIsSubmittingWaitlist] = useState(false);
   const [isSubmittingEarlyAccess, setIsSubmittingEarlyAccess] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
-  const [submitError, setSubmitError] = useState("");
-  // State for success popup
-  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [submitError, setSubmitError] = useState("");  // State for confetti trigger
+  const [triggerConfetti, setTriggerConfetti] = useState(false);
   
   // State for doctor registration dialog
   const [showDoctorDialog, setShowDoctorDialog] = useState(false);
@@ -105,9 +104,9 @@ export function TelehealthLanding() {
   const [doctorSubmitError, setDoctorSubmitError] = useState("");
   
   // State for selected testimonials
-  const [selectedTestimonials, setSelectedTestimonials] = useState<Testimonial[]>([]);// Trigger confetti when success popup opens
+  const [selectedTestimonials, setSelectedTestimonials] = useState<Testimonial[]>([]);  // Trigger confetti when email is successfully registered
   useEffect(() => {
-    if (showSuccessPopup) {
+    if (triggerConfetti) {
       const end = Date.now() + 3 * 1000; // 3 seconds
       const colors = ["#1A56DB", "#E6EDFB", "#0F3285", "#FFD700", "#FF6B6B"];
 
@@ -135,8 +134,11 @@ export function TelehealthLanding() {
       };
 
       frame();
+      
+      // Reset the trigger after confetti starts
+      setTriggerConfetti(false);
     }
-  }, [showSuccessPopup]);
+  }, [triggerConfetti]);
   
   // All testimonials data
   const allTestimonials: Testimonial[] = [
@@ -321,7 +323,7 @@ export function TelehealthLanding() {
     try {      const result = await addToWaitlist(email);
       if (result.success) {
         setEmail('');
-        setShowSuccessPopup(true);
+        setTriggerConfetti(true);
       } else {
         if (result.error?.includes('already exists')) {
           setSubmitMessage(t.messages.alreadyInWaitlist);
@@ -345,7 +347,7 @@ export function TelehealthLanding() {
     try {      const result = await addToWaitlist(waitlistEmail);
       if (result.success) {
         setWaitlistEmail('');
-        setShowSuccessPopup(true);
+        setTriggerConfetti(true);
       } else {
         if (result.error?.includes('already exists')) {
           setSubmitMessage(t.messages.alreadyInWaitlist);
@@ -2319,19 +2321,7 @@ export function TelehealthLanding() {
             
           </div>
         </div>
-      </footer>      {/* Success Popup */}
-      <Dialog open={showSuccessPopup} onOpenChange={setShowSuccessPopup}>
-        <DialogContent className="bg-white border border-gray-200 shadow-lg">
-          <DialogHeader>
-            <DialogTitle className="text-2xl">{t.messages.thanks}</DialogTitle>
-            <DialogDescription className="text-lg">
-              {t.messages.emailRegistered}
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
-
-      {/* Doctor Registration Dialog */}
+      </footer>      {/* Doctor Registration Dialog */}
       <Dialog open={showDoctorDialog} onOpenChange={setShowDoctorDialog}>
         <DialogContent className="bg-white border border-gray-200 shadow-lg max-w-md">
           <DialogHeader>            <DialogTitle className="text-2xl" style={{ color: PRIMARY }}>
