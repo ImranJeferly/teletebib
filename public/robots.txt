@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Block sensitive areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /.env
+Disallow: /config/
+
+# Allow important pages
+Allow: /api/og
+
+# Sitemap location
+Sitemap: https://teletebib.com/sitemap.xml
+
+# Additional directives for better indexing
+Host: https://teletebib.com

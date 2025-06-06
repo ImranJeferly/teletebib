@@ -1,0 +1,53 @@
+{
+  "name": "TeleTebib - Onlayn Tibbi Məsləhətlər",
+  "short_name": "TeleTebib",
+  "description": "Sertifikatlı həkimlərlə və psixoloqlarla onlayn əlaqə saxlayın. Azərbaycanda 24/7 əlçatan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1A56DB",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["medical", "health", "lifestyle"],
+  "lang": "az",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/ico.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ico.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/showcase.jpg",
+      "sizes": "390x844",
+      "type": "image/jpeg",
+      "platform": "narrow",
+      "label": "TeleTebib Tətbiq İnterfeysi"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Həkim Tap",
+      "short_name": "Həkimlər",
+      "description": "Mövcud həkim və mütəxəssisləri nəzərdən keçirin",
+      "url": "/?action=find-doctor",
+      "icons": [{ "src": "/ico.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Təcili Yardım",
+      "short_name": "Təcili",
+      "description": "Dərhal tibbi yardım alın",
+      "url": "/?action=emergency",
+      "icons": [{ "src": "/ico.png", "sizes": "96x96" }]
+    }
+  ]
+}
