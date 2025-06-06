@@ -555,11 +555,10 @@ export const en: Translations = {
     title1: "Reliable medical service.",
     title2: "Real results.",
     stats: {
-      stat1: "Users meet with a doctor within 3 days of registration*",
-      stat2: "Patients attending follow-up appointments report symptom improvement within 3 months*",
+      stat1: "Users meet with a doctor within 3 days of registration*",      stat2: "Patients attending follow-up appointments report symptom improvement within 3 months*",
       stat3: "Users report increased sense of health control within 90 days*",
     },
-    footnote: "*based on all TeleTebib clients with moderate to severe anxiety and/or depression from 2020-2023.",
+    footnote: "*based on all TeleTebib clients with moderate to severe anxiety and/or depression from 2024-2025.",
   },
   
   whyTeleTebib: {
@@ -986,11 +985,10 @@ export const az: Translations = {
     title1: "Etibarlı tibbi xidmət.",
     title2: "Real nəticələr.",
     stats: {
-      stat1: "İstifadəçilər qeydiyyatdan sonra 3 gün ərzində həkimlə görüşür*",
-      stat2: "Təkrar görüşlərdə iştirak edən pasiyentlər 3 ay ərzində simptomlarda yaxşılaşma bildirir*",
+      stat1: "İstifadəçilər qeydiyyatdan sonra 3 gün ərzində həkimlə görüşür*",      stat2: "Təkrar görüşlərdə iştirak edən pasiyentlər 3 ay ərzində simptomlarda yaxşılaşma bildirir*",
       stat3: "İstifadəçilər 90 gün ərzində sağlamlıqlarına nəzarət hissinin artdığını bildirir*",
     },
-    footnote: "*based on all TeleTebib clients with moderate to severe anxiety and/or depression from 2020-2023.",
+    footnote: "*orta və ağır narahatlıq və/və ya depressiya olan bütün TeleTebib müştərilərinin 2024-2025-ci illərdən əldə edilən nəticələri əsasında.",
   },
   
   whyTeleTebib: {
@@ -1417,11 +1415,10 @@ export const ru: Translations = {
     title1: "Надежная медицинская помощь.",
     title2: "Реальные результаты.",
     stats: {
-      stat1: "Пользователи встречаются с врачом в течение 3 дней после регистрации*",
-      stat2: "Пациенты, посещающие повторные приемы, сообщают об улучшении симптомов в течение 3 месяцев*",
+      stat1: "Пользователи встречаются с врачом в течение 3 дней после регистрации*",      stat2: "Пациенты, посещающие повторные приемы, сообщают об улучшении симптомов в течение 3 месяцев*",
       stat3: "Пользователи сообщают об увеличении чувства контроля над здоровьем в течение 90 дней*",
     },
-    footnote: "*основано на данных всех клиентов TeleTebib с умеренной и тяжелой тревожностью и/или депрессией с 2020-2023 гг.",
+    footnote: "*основано на данных всех клиентов TeleTebib с умеренной и тяжелой тревожностью и/или депрессией с 2024-2025 гг.",
   },
   
   whyTeleTebib: {
