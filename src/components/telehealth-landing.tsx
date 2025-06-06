@@ -1152,7 +1152,7 @@ export function TelehealthLanding() {
                 }}>
                 <div className="w-full h-full relative overflow-hidden rounded-lg">
                   <img 
-                    src="/specialties/Ent-specialist.png" 
+                    src="/specialties/ENT-specialist.png" 
                     alt="ENT Specialist"
                     className="w-full h-full object-cover"
                   />
