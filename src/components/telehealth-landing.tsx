@@ -1367,7 +1367,7 @@ export function TelehealthLanding() {
                 }}>
                 <div className="w-full h-full relative overflow-hidden rounded-lg">
                   <img 
-                    src="/specialties/Logoped.png" 
+                    src="/specialties/logoped.png" 
                     alt="Logoped"
                     className="w-full h-full object-cover"
                   />
