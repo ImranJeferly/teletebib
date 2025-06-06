@@ -159,15 +159,13 @@ export default function BlogsPage() {
                 style={{ borderColor: '#E5E7EB' }}
               />
             </div>
-          </div>
-
-          {/* Blog Grid */}
+          </div>          {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredBlogs.map((blog) => (
-              <article 
-                key={blog.id}
-                className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-300 group"
-              >
+              <Link key={blog.id} href={`/blogs/${blog.id}`}>
+                <article 
+                  className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-300 group cursor-pointer"
+                >
                 {/* Blog Image Placeholder */}
                 <div 
                   className="w-full h-48 bg-gradient-to-r from-blue-50 to-indigo-100 flex items-center justify-center"
@@ -219,9 +217,7 @@ export default function BlogsPage() {
                     style={{ color: FOREGROUND_LIGHT }}
                   >
                     {blog.excerpt}
-                  </p>
-
-                  {/* Date & Read More */}
+                  </p>                  {/* Date & Read More */}
                   <div className="flex items-center justify-between">
                     <span className="text-xs" style={{ color: FOREGROUND_LIGHT }}>
                       {new Date(blog.date).toLocaleDateString('az-AZ', {
@@ -230,16 +226,17 @@ export default function BlogsPage() {
                         day: 'numeric'
                       })}
                     </span>
-                    <button 
+                    <Link 
+                      href={`/blogs/${blog.id}`}
                       className="flex items-center gap-1 text-sm font-medium hover:gap-2 transition-all"
                       style={{ color: PRIMARY }}
                     >
                       Oxu
                       <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
+                    </Link>                  </div>
                 </div>
               </article>
+              </Link>
             ))}
           </div>
 
