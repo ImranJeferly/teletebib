@@ -43,12 +43,6 @@ export function PatientCTA({ language }: PatientCTAProps) {
         {/* Content Side */}
         <div className="md:w-2/3 p-8 order-1 md:order-2" style={{ backgroundColor: WHITE }}>
           <div className="flex items-center gap-3 mb-4">
-            <div 
-              className="w-12 h-12 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: '#DCFCE7' }}
-            >
-              <Heart className="w-6 h-6" style={{ color: '#10B981' }} />
-            </div>
             <h3 
               className="text-2xl md:text-3xl font-bold"
               style={{ color: FOREGROUND }}

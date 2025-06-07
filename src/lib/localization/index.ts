@@ -781,7 +781,7 @@ export const en: Translations = {  header: {
         accessibility: "Easy access",
       },
       buttons: {
-        join: "Join waitlist now",
+        join: "Join us",
         learnMore: "Learn more",
       },
     },
@@ -1332,7 +1332,7 @@ export const az: Translations = {  header: {
         accessibility: "Asan giriş",
       },
       buttons: {
-        join: "İndi gözləmə siyahısına qoşulun",
+        join: "Bizə qoşulun",
         learnMore: "Daha çox öyrənin",
       },
     },
@@ -1806,7 +1806,7 @@ export const ru: Translations = {  header: {
         accessibility: "Легкий доступ",
       },
       buttons: {
-        join: "Присоединиться к списку ожидания сейчас",
+        join: "Присоединиться к нам",
         learnMore: "Узнать больше",
       },
     },
