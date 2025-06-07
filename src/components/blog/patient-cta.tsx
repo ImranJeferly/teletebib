@@ -2,9 +2,17 @@
 
 import { ArrowRight, Heart, Shield, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Language, getTranslations } from '@/lib/localization';
+import { useMemo } from 'react';
 import Link from 'next/link';
 
-export function PatientCTA() {
+interface PatientCTAProps {
+  language: Language;
+}
+
+export function PatientCTA({ language }: PatientCTAProps) {
+  const translations = useMemo(() => getTranslations(language), [language]);
+
   // Direct color definitions (same as landing page)
   const PRIMARY = "#1A56DB";
   const PRIMARY_LIGHT = "#E6EDFB";
@@ -26,9 +34,8 @@ export function PatientCTA() {
               style={{ backgroundColor: '#10B981' }}
             >
               <Heart className="w-10 h-10 text-white" />
-            </div>
-            <p className="text-sm font-medium" style={{ color: '#10B981' }}>
-              Xəstə Qeydiyyatı
+            </div>            <p className="text-sm font-medium" style={{ color: '#10B981' }}>
+              {translations.cta.patient.title}
             </p>
           </div>
         </div>
@@ -46,7 +53,7 @@ export function PatientCTA() {
               className="text-2xl md:text-3xl font-bold"
               style={{ color: FOREGROUND }}
             >
-              Sağlamlığınıza qayğı göstərin
+              {translations.cta.patient.title}
             </h3>
           </div>
           
@@ -54,20 +61,20 @@ export function PatientCTA() {
             className="text-base leading-relaxed mb-6"
             style={{ color: FOREGROUND_LIGHT }}
           >
-            TeleTebib platformasında qeydiyyatdan keçin və sağlamlığınızı izləmək, həkim məsləhətləri almaq üçün bizə qoşulun.
+            {translations.cta.patient.subtitle}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4" style={{ color: '#10B981' }} />
               <span className="text-sm" style={{ color: FOREGROUND_LIGHT }}>
-                Təhlükəsiz platform
+                {translations.cta.patient.features.security}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" style={{ color: '#10B981' }} />
               <span className="text-sm" style={{ color: FOREGROUND_LIGHT }}>
-                Asaan əlçatanlıq
+                {translations.cta.patient.features.accessibility}
               </span>
             </div>
           </div>
@@ -78,20 +85,8 @@ export function PatientCTA() {
                 className="w-full rounded-full py-3 px-6 text-sm font-medium shadow-sm text-white hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: '#10B981' }}
               >
-                İndi qeydiyyatdan keç
+                {translations.cta.patient.buttons.join}
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/blogs" className="flex-1">
-              <Button 
-                variant="outline"
-                className="w-full rounded-full py-3 px-6 text-sm font-medium border-2 hover:bg-gray-50 transition-colors"
-                style={{ 
-                  borderColor: '#10B981',
-                  color: '#10B981'
-                }}
-              >
-                Daha çox məlumat
               </Button>
             </Link>
           </div>

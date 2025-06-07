@@ -296,10 +296,9 @@ export function BlogClient({ slug }: BlogClientProps) {
                 key={section.id}
                 className="mb-10"
                 id={section.id}
-              >
-                {/* Render CTA before section if configured */}
+              >                {/* Render CTA before section if configured */}
                 {section.cta && section.cta.position === 'before' && (
-                  <CTARenderer type={section.cta.type} position="before" />
+                  <CTARenderer type={section.cta.type} position="before" language={currentLanguage} />
                 )}
                 
                 <div className="flex items-center gap-3 mb-4">
@@ -327,10 +326,9 @@ export function BlogClient({ slug }: BlogClientProps) {
                   content={section.content[currentLanguage]}
                   className="text-base leading-relaxed"
                 />
-                
-                {/* Render CTA after section if configured */}
+                  {/* Render CTA after section if configured */}
                 {section.cta && section.cta.position === 'after' && (
-                  <CTARenderer type={section.cta.type} position="after" />
+                  <CTARenderer type={section.cta.type} position="after" language={currentLanguage} />
                 )}
               </section>
             ))}

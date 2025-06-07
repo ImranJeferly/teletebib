@@ -291,6 +291,33 @@ export interface Translations {  // Header
       error: string;
     };
   };
+    // CTA Section
+  cta: {
+    patient: {
+      title: string;
+      subtitle: string;
+      features: {
+        security: string;
+        accessibility: string;
+      };
+      buttons: {
+        join: string;
+        learnMore: string;
+      };
+    };
+    doctor: {
+      title: string;
+      subtitle: string;
+      features: {
+        experts: string;
+        availability: string;
+      };
+      buttons: {
+        findDoctor: string;
+        moreArticles: string;
+      };
+    };
+  };
   
   // Testimonials Section
   testimonials: {
@@ -739,10 +766,36 @@ export const en: Translations = {  header: {
       cancel: "Cancel",
       submit: "Submit",
       submitting: "Submitting...",
-    },
-    messages: {
+    },    messages: {
       success: "Your application has been submitted successfully. We will contact you.",
       error: "An error occurred. Please try again.",
+    },
+  },
+  
+  cta: {
+    patient: {
+      title: "Join the waitlist for healthcare",
+      subtitle: "Sign up on the TeleTebib platform and join our waitlist to get access to doctor consultations and health monitoring features.",
+      features: {
+        security: "Secure platform",
+        accessibility: "Easy access",
+      },
+      buttons: {
+        join: "Join waitlist now",
+        learnMore: "Learn more",
+      },
+    },
+    doctor: {
+      title: "Get doctor consultation",
+      subtitle: "Have questions about your health? Get online consultation from experienced doctors and maintain a healthy lifestyle.",
+      features: {
+        experts: "50+ specialist doctors",
+        availability: "24/7 availability",
+      },
+      buttons: {
+        findDoctor: "Join doctor waitlist",
+        moreArticles: "More articles",
+      },
     },
   },
   
@@ -1266,10 +1319,37 @@ export const az: Translations = {  header: {
       },
       doctorBenefits: {
         question: "TeleTebib-də fəaliyyət göstərmək həkimlər üçün hansı üstünlükləri yaradır?",
-        answer: "TeleTebib həkimlərə: Onlayn fəaliyyətlə əlavə qazanc imkanı, Əlavə klinikaya ehtiyac olmadan xəstələrlə rahat əlaqə, İstənilən yerdən və zamanla işləmə azadlığı, Rəqəmsal resept və izləmə sistemləri ilə vaxta qənaət, Müasir və təhlükəsiz telemedisin platforması üzərindən pasiyentlərə xidmət göstərmək imkanı yaradır",
-      },
+        answer: "TeleTebib həkimlərə: Onlayn fəaliyyətlə əlavə qazanc imkanı, Əlavə klinikaya ehtiyac olmadan xəstələrlə rahat əlaqə, İstənilən yerdən və zamanla işləmə azadlığı, Rəqəmsal resept və izləmə sistemləri ilə vaxta qənaət, Müasir və təhlükəsiz telemedisin platforması üzərindən pasiyentlərə xidmət göstərmək imkanı yaradır",      },
     }
   },
+  
+  cta: {
+    patient: {
+      title: "Sağlamlıq üçün gözləmə siyahısına qoşulun",
+      subtitle: "TeleTebib platformasına qeydiyyatdan keçin və həkim konsultasiyaları və sağlamlıq monitorinqi xüsusiyyətlərinə çıxış əldə etmək üçün gözləmə siyahımıza qoşulun.",
+      features: {
+        security: "Təhlükəsiz platforma",
+        accessibility: "Asan giriş",
+      },
+      buttons: {
+        join: "İndi gözləmə siyahısına qoşulun",
+        learnMore: "Daha çox öyrənin",
+      },
+    },
+    doctor: {
+      title: "Həkim konsultasiyası alın",
+      subtitle: "Sağlamlığınızla bağlı suallarınız var? Təcrübəli həkimlərdən onlayn konsultasiya alın və sağlam həyat tərzi saxlayın.",
+      features: {
+        experts: "50+ mütəxəssis həkim",
+        availability: "24/7 mövcudluq",
+      },
+      buttons: {
+        findDoctor: "Həkim gözləmə siyahısına qoşulun",
+        moreArticles: "Daha çox məqalələr",
+      },
+    },
+  },
+
   
   footer: {
     brandName: "TeleTebib",
@@ -1713,11 +1793,38 @@ export const ru: Translations = {  header: {
       },
       doctorBenefits: {
         question: "Какие преимущества создает работа на TeleTebib для врачей?",
-        answer: "TeleTebib предоставляет врачам: Возможности дополнительного дохода через онлайн деятельность, Удобный контакт с пациентами без необходимости в дополнительных клиниках, Свободу работать из любого места и в любое время, Экономию времени с цифровыми системами рецептов и мониторинга, Возможность обслуживать пациентов через современную и безопасную телемедицинскую платформу",
+        answer: "TeleTebib предоставляет врачам: Возможности дополнительного дохода через онлайн деятельность, Удобный контакт с пациентами без необходимости в дополнительных клиниках, Свободу работать из любого места и в любое время, Экономию времени с цифровыми системами рецептов и мониторинга, Возможность обслуживать пациентов через современную и безопасную телемедицинскую платформу",      },
+    },
+  },
+  
+  cta: {
+    patient: {
+      title: "Присоединяйтесь к списку ожидания медицинских услуг",
+      subtitle: "Зарегистрируйтесь на платформе TeleTebib и присоединитесь к нашему списку ожидания, чтобы получить доступ к консультациям врачей и функциям мониторинга здоровья.",
+      features: {
+        security: "Безопасная платформа",
+        accessibility: "Легкий доступ",
+      },
+      buttons: {
+        join: "Присоединиться к списку ожидания сейчас",
+        learnMore: "Узнать больше",
+      },
+    },
+    doctor: {
+      title: "Получить консультацию врача",
+      subtitle: "Есть вопросы о вашем здоровье? Получите онлайн консультацию от опытных врачей и поддерживайте здоровый образ жизни.",
+      features: {
+        experts: "50+ врачей-специалистов",
+        availability: "Доступность 24/7",
+      },
+      buttons: {
+        findDoctor: "Присоединиться к списку ожидания врачей",
+        moreArticles: "Больше статей",
       },
     },
   },
   
+
   footer: {
     brandName: "TeleTebib",
     copyright: "© 2024 TeleTebib, Inc. Все права защищены.",
