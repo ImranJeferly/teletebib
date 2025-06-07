@@ -1,5 +1,5 @@
 import { db } from './firebase';
-import { collection, addDoc, getDocs, query, where, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, where, serverTimestamp, doc, deleteDoc } from 'firebase/firestore';
 
 export interface WaitlistEntry {
   email: string;
@@ -100,6 +100,106 @@ export const addDoctorToWaitlist = async (doctorData: Omit<DoctorWaitlistEntry, 
   }
 };
 
+// Get all waitlist entries (patients and doctors)
+export const getAllWaitlistEntries = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'waitlist'));
+    const entries = querySnapshot.docs.map(doc => {
+      const data = doc.data();
+      let timestamp = new Date();
+      
+      // Handle different timestamp formats
+      if (data.timestamp && typeof data.timestamp.toDate === 'function') {
+        timestamp = data.timestamp.toDate();
+      } else if (data.timestamp instanceof Date) {
+        timestamp = data.timestamp;
+      } else if (data.timestamp) {
+        timestamp = new Date(data.timestamp);
+      }
+      
+      return {
+        id: doc.id,
+        ...data,
+        timestamp
+      };
+    });
+    
+    // Sort by timestamp (newest first)
+    return entries.sort((a: any, b: any) => b.timestamp - a.timestamp);
+  } catch (error) {
+    console.error('Error getting waitlist entries:', error);
+    return [];
+  }
+};
+
+// Get patient waitlist entries only
+export const getPatientWaitlistEntries = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'waitlist'));
+    const entries = querySnapshot.docs
+      .map(doc => {
+        const data = doc.data();
+        let timestamp = new Date();
+        
+        // Handle different timestamp formats
+        if (data.timestamp && typeof data.timestamp.toDate === 'function') {
+          timestamp = data.timestamp.toDate();
+        } else if (data.timestamp instanceof Date) {
+          timestamp = data.timestamp;
+        } else if (data.timestamp) {
+          timestamp = new Date(data.timestamp);
+        }
+        
+        return {
+          id: doc.id,
+          ...data,
+          timestamp
+        };
+      })
+      .filter((entry: any) => !entry.type || entry.type === 'patient'); // No type field means patient
+    
+    // Sort by timestamp (newest first)
+    return entries.sort((a: any, b: any) => b.timestamp - a.timestamp);
+  } catch (error) {
+    console.error('Error getting patient waitlist entries:', error);
+    return [];
+  }
+};
+
+// Get doctor waitlist entries only
+export const getDoctorWaitlistEntries = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, 'waitlist'));
+    const entries = querySnapshot.docs
+      .map(doc => {
+        const data = doc.data();
+        let timestamp = new Date();
+        
+        // Handle different timestamp formats
+        if (data.timestamp && typeof data.timestamp.toDate === 'function') {
+          timestamp = data.timestamp.toDate();
+        } else if (data.timestamp instanceof Date) {
+          timestamp = data.timestamp;
+        } else if (data.timestamp) {
+          timestamp = new Date(data.timestamp);
+        }
+        
+        return {
+          id: doc.id,
+          ...data,
+          timestamp
+        };
+      })
+      .filter((entry: any) => entry.type === 'doctor');
+    
+    // Sort by timestamp (newest first)
+    return entries.sort((a: any, b: any) => b.timestamp - a.timestamp);
+  } catch (error) {
+    console.error('Error getting doctor waitlist entries:', error);
+    return [];
+  }
+};
+
 // Contact form function
 export const submitContactForm = async (contactData: {
   name: string;
@@ -117,6 +217,17 @@ export const submitContactForm = async (contactData: {
     return { success: true, id: docRef.id };
   } catch (error: any) {
     console.error('Error submitting contact form:', error);
+    return { success: false, error: error.message };
+  }
+};
+
+// Delete waitlist entry
+export const deleteWaitlistEntry = async (entryId: string) => {
+  try {
+    await deleteDoc(doc(db, 'waitlist', entryId));
+    return { success: true };
+  } catch (error: any) {
+    console.error('Error deleting waitlist entry:', error);
     return { success: false, error: error.message };
   }
 };

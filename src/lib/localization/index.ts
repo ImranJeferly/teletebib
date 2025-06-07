@@ -1,10 +1,29 @@
 export type Language = 'en' | 'az' | 'ru';
 
-export interface Translations {
-  // Header
+export interface Translations {  // Header
   header: {
     brandName: string;
     languageSelector: string;
+  },
+  // Blog Section
+  blog: {
+    title: string;
+    subtitle: string;
+    searchPlaceholder: string;
+    readMore: string;
+    backToHome: string;
+    backToBlogs: string;
+    selectLanguage: string;
+    viewAllBlogs: string;
+  },
+  
+  // Blog Section for Landing Page
+  blogSection: {
+    title: string;
+    subtitle: string;
+    seeAllBlogs: string;
+    readMore: string;
+    noBlogs: string;
   },
   
   // Medication Reminder Section
@@ -376,10 +395,27 @@ export interface Translations {
 }
 
 // English translations
-export const en: Translations = {
-  header: {
+export const en: Translations = {  header: {
     brandName: "TeleTebib",
     languageSelector: "Select language (coming soon)",
+  },
+  blog: {
+    title: "Our Blogs",
+    subtitle: "Latest articles and tips on health, medicine and wellness topics",
+    searchPlaceholder: "Search in blogs...",
+    readMore: "Read",
+    backToHome: "Back to Home",
+    backToBlogs: "Back to Blogs",
+    selectLanguage: "Select language",
+    viewAllBlogs: "View All Blogs",
+  },
+  
+  blogSection: {
+    title: "Latest Health Articles",
+    subtitle: "Stay informed with our latest insights on health, medicine, and wellness",
+    seeAllBlogs: "See All Articles",
+    readMore: "Read More",
+    noBlogs: "No articles available yet",
   },
   
   medicationReminder: {
@@ -809,10 +845,27 @@ export const en: Translations = {
 };
 
 // Azerbaijani translations (base language)
-export const az: Translations = {
-  header: {
+export const az: Translations = {  header: {
     brandName: "TeleTebib",
     languageSelector: "Dil seçin (tezliklə)",
+  },
+  blog: {
+    title: "Bloqlarımız",
+    subtitle: "Sağlamlıq, təbabət və wellness mövzularında ən son məqalələr və məsləhətlər",
+    searchPlaceholder: "Bloqlarda axtar...",
+    readMore: "Oxu",
+    backToHome: "Ana Səhifəyə Qayıt",
+    backToBlogs: "Bloqlara qayıt",
+    selectLanguage: "Dil seçin",
+    viewAllBlogs: "Bütün bloqlara bax",
+  },
+  
+  blogSection: {
+    title: "Ən Son Sağlamlıq Məqalələri",
+    subtitle: "Sağlamlıq, təbabət və wellness sahələrində ən son fikirlərimizlə məlumat əldə edin",
+    seeAllBlogs: "Bütün Məqalələrə Bax",
+    readMore: "Daha Çox Oxu",
+    noBlogs: "Hələ heç bir məqalə mövcud deyil",
   },
   
   medicationReminder: {
@@ -1239,10 +1292,27 @@ export const az: Translations = {
 };
 
 // Russian translations
-export const ru: Translations = {
-  header: {
+export const ru: Translations = {  header: {
     brandName: "TeleTebib",
     languageSelector: "Выбрать язык (скоро)",
+  },
+  blog: {
+    title: "Наши блоги",
+    subtitle: "Последние статьи и советы по вопросам здоровья, медицины и wellness",
+    searchPlaceholder: "Поиск в блогах...",
+    readMore: "Читать",
+    backToHome: "Вернуться на главную",
+    backToBlogs: "Вернуться к блогам",
+    selectLanguage: "Выбрать язык",
+    viewAllBlogs: "Посмотреть все блоги",
+  },
+  
+  blogSection: {
+    title: "Последние статьи о здоровье",
+    subtitle: "Будьте в курсе наших последних идей о здоровье, медицине и wellness",
+    seeAllBlogs: "Посмотреть все статьи",
+    readMore: "Читать далее",
+    noBlogs: "Статьи пока недоступны",
   },
   
   medicationReminder: {
@@ -1667,6 +1737,23 @@ export const ru: Translations = {
     emailRegistered: "Ваш email адрес успешно зарегистрирован.",
   },
 };
+
+// Language persistence utilities
+export const saveLanguageToStorage = (language: Language): void => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('selectedLanguage', language);
+  }
+};
+
+export const getLanguageFromStorage = (): Language => {
+  if (typeof window !== 'undefined') {
+    const savedLanguage = localStorage.getItem('selectedLanguage') as Language;
+    if (savedLanguage && ['en', 'az', 'ru'].includes(savedLanguage)) {
+      return savedLanguage;
+    }
+  }
+  return 'az'; // Default language
+}
 
 // Translation utility functions
 export const getTranslations = (lang: Language): Translations => {

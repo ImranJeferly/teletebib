@@ -27,6 +27,7 @@ import {
   Globe,
   Mail
 } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { 
   Dialog,
@@ -40,7 +41,8 @@ import { Label } from "@/components/ui/label";
 import confetti from "canvas-confetti";
 import { cn } from "@/lib/utils";
 import { addToWaitlist, addDoctorToWaitlist } from "@/lib/firebase-services";
-import { Language, getTranslations } from "@/lib/localization";
+import { getPublishedBlogPosts, BlogPost } from "@/lib/blog-service";
+import { Language, getTranslations, getLanguageFromStorage, saveLanguageToStorage } from "@/lib/localization";
 import { LanguageSelector } from "@/components/ui/language-selector";
 
 // Testimonial type definition
@@ -51,10 +53,21 @@ interface Testimonial {
   text: string;
 }
 
-export function TelehealthLanding() {
-  // Language state and translations
+export function TelehealthLanding() {  // Language state and translations
   const [currentLanguage, setCurrentLanguage] = useState<Language>('az');
   const t = getTranslations(currentLanguage);
+  
+  // Initialize language from localStorage
+  useEffect(() => {
+    const savedLanguage = getLanguageFromStorage();
+    setCurrentLanguage(savedLanguage);
+  }, []);
+  
+  // Save language to localStorage when it changes
+  const handleLanguageChange = (language: Language) => {
+    setCurrentLanguage(language);
+    saveLanguageToStorage(language);
+  };
   
   // Direct color definitions
   const PRIMARY = "#1A56DB";
@@ -102,9 +115,12 @@ export function TelehealthLanding() {
   const [isDoctorSubmitting, setIsDoctorSubmitting] = useState(false);
   const [doctorSubmitMessage, setDoctorSubmitMessage] = useState("");
   const [doctorSubmitError, setDoctorSubmitError] = useState("");
+    // State for selected testimonials
+  const [selectedTestimonials, setSelectedTestimonials] = useState<Testimonial[]>([]);
   
-  // State for selected testimonials
-  const [selectedTestimonials, setSelectedTestimonials] = useState<Testimonial[]>([]);  // Trigger confetti when email is successfully registered
+  // State for blog posts
+  const [latestBlogs, setLatestBlogs] = useState<BlogPost[]>([]);
+  const [blogsLoading, setBlogsLoading] = useState(true);// Trigger confetti when email is successfully registered
   useEffect(() => {
     if (triggerConfetti) {
       const end = Date.now() + 3 * 1000; // 3 seconds
@@ -180,11 +196,29 @@ export function TelehealthLanding() {
     const shuffled = [...array].sort(() => 0.5 - Math.random());
     // Get the first `count` elements
     return shuffled.slice(0, count);
-  };
-  // Select random testimonials on component mount
+  };  // Select random testimonials on component mount
   useEffect(() => {
     const randomTestimonials = getRandomElements(allTestimonials, 3);
     setSelectedTestimonials(randomTestimonials);
+  }, []);
+
+  // Load latest blog posts
+  useEffect(() => {
+    const loadBlogs = async () => {
+      try {
+        setBlogsLoading(true);
+        const publishedBlogs = await getPublishedBlogPosts();
+        // Get latest 3 blogs
+        setLatestBlogs(publishedBlogs.slice(0, 3));
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
+        setLatestBlogs([]);
+      } finally {
+        setBlogsLoading(false);
+      }
+    };
+
+    loadBlogs();
   }, []);
     // FAQ data using translation system
   const faqItems = [    {
@@ -422,10 +456,9 @@ export function TelehealthLanding() {
           </div>
           
           {/* Working Language Selector */}
-          <div className="flex items-center gap-2">
-            <LanguageSelector
+          <div className="flex items-center gap-2">            <LanguageSelector
               currentLanguage={currentLanguage}
-              onLanguageChange={setCurrentLanguage}
+              onLanguageChange={handleLanguageChange}
             />
           </div>
         </div>
@@ -2227,9 +2260,119 @@ export function TelehealthLanding() {
           </div>
           <div className="absolute -z-10 right-0 bottom-24 h-32 sm:h-48 w-32 sm:w-48">
             <div className="w-full h-full rounded-full bg-blue-100 opacity-60"></div>
+          </div>        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-24 bg-gray-50 overflow-hidden" style={{ maxWidth: "100vw" }}>
+        <div className="container mx-auto px-4 overflow-hidden">
+          <div className="text-center mb-16">
+            <h2 className={mainHeadingClass.replace('mb-6', 'mb-4')} style={{ color: FOREGROUND }}>
+              {t.blogSection.title}
+            </h2>
+            <p className="text-lg mb-8" style={{ color: FOREGROUND_LIGHT }}>
+              {t.blogSection.subtitle}
+            </p>
           </div>
+
+          {blogsLoading ? (
+            <div className="text-center py-12">
+              <div className="inline-flex items-center space-x-2">
+                <div className="animate-spin rounded-full h-6 w-6 border-b-2" style={{ borderColor: PRIMARY }}></div>
+                <span style={{ color: FOREGROUND_LIGHT }}>Yüklənir...</span>
+              </div>
+            </div>
+          ) : latestBlogs.length > 0 ? (
+            <>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {latestBlogs.map((blog) => (
+                  <article 
+                    key={blog.id}
+                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+                  >
+                    {blog.imageUrl && (
+                      <div className="aspect-video bg-gray-200">
+                        <img 
+                          src={blog.imageUrl} 
+                          alt={blog.title[currentLanguage] || blog.title.az}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span 
+                          className="text-xs font-semibold px-2 py-1 rounded-full"
+                          style={{ 
+                            backgroundColor: PRIMARY_LIGHT, 
+                            color: PRIMARY 
+                          }}
+                        >
+                          {blog.category[currentLanguage] || blog.category.az}
+                        </span>
+                        <span className="text-xs" style={{ color: FOREGROUND_LIGHT }}>
+                          {blog.readTime || '5 dəq'}
+                        </span>
+                      </div>
+
+                      <h3 
+                        className="text-xl font-bold mb-3 line-clamp-2"
+                        style={{ color: FOREGROUND }}
+                      >
+                        {blog.title[currentLanguage] || blog.title.az}
+                      </h3>
+
+                      <p 
+                        className="text-sm mb-4 line-clamp-3"
+                        style={{ color: FOREGROUND_LIGHT }}
+                      >
+                        {blog.excerpt[currentLanguage] || blog.excerpt.az}
+                      </p>
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                          <Calendar size={14} style={{ color: FOREGROUND_LIGHT }} />
+                          <span className="text-xs" style={{ color: FOREGROUND_LIGHT }}>
+                            {new Date(blog.date).toLocaleDateString('az-AZ')}
+                          </span>
+                        </div>
+                        
+                        <Link 
+                          href={`/blogs/${blog.slug || blog.id}`}
+                          className="text-sm font-medium hover:underline"
+                          style={{ color: PRIMARY }}
+                        >
+                          {t.blogSection.readMore} →
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div className="text-center">
+                <Link href="/blogs">
+                  <Button 
+                    className={primaryButtonClass}
+                    style={{ backgroundColor: PRIMARY }}
+                  >
+                    {t.blogSection.seeAllBlogs}
+                  </Button>
+                </Link>
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-12">
+              <p style={{ color: FOREGROUND_LIGHT }}>
+                {t.blogSection.noBlogs}
+              </p>
+            </div>
+          )}
         </div>
-      </section>      {/* FAQ Section - Updated heading */}
+      </section>
+
+      {/* FAQ Section - Updated heading */}
       <section className="py-24 bg-white overflow-hidden" style={{ maxWidth: "100vw" }}>
         <div className="container mx-auto px-4 overflow-hidden"><h2 className={mainHeadingClass.replace('mb-6', 'mb-16')} style={{ color: FOREGROUND, textAlign: 'center' }}>
             {t.faq.title}

@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Language } from "@/lib/localization"
+import { Language, getTranslations } from "@/lib/localization"
 import { Globe } from "lucide-react"
 
 interface LanguageSelectorProps {
@@ -20,6 +20,8 @@ export function LanguageSelector({
   currentLanguage, 
   onLanguageChange 
 }: LanguageSelectorProps) {
+  const t = getTranslations(currentLanguage);
+  
   // Language display names
   const languageNames: Record<Language, string> = {
     en: 'English',
@@ -38,7 +40,7 @@ export function LanguageSelector({
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon" className="relative bg-white hover:bg-gray-50">
           <Globe className="h-[1.2rem] w-[1.2rem]" />
-          <span className="sr-only">Select language</span>
+          <span className="sr-only">{t.blog.selectLanguage}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-white border border-gray-200">        {(Object.keys(languageNames) as Language[]).map((lang) => (
