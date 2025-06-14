@@ -786,15 +786,15 @@ export const en: Translations = {  header: {
       },
     },
     doctor: {
-      title: "Get doctor consultation",
-      subtitle: "Have questions about your health? Get online consultation from experienced doctors and maintain a healthy lifestyle.",
+      title: "Are You a Doctor? Join Our Platform",
+      subtitle: "Register for early access as a healthcare provider on TeleTebib. Start earning by providing online consultations and be part of Azerbaijan's leading telemedicine platform.",
       features: {
-        experts: "50+ specialist doctors",
-        availability: "24/7 availability",
+        experts: "Growing network of 50+ doctors",
+        availability: "Flexible working hours",
       },
       buttons: {
-        findDoctor: "Join doctor waitlist",
-        moreArticles: "More articles",
+        findDoctor: "Register as Doctor",
+        moreArticles: "Learn About Our Platform",
       },
     },
   },
@@ -1336,16 +1336,16 @@ export const az: Translations = {  header: {
         learnMore: "Daha çox öyrənin",
       },
     },
-    doctor: {
-      title: "Həkim konsultasiyası alın",
-      subtitle: "Sağlamlığınızla bağlı suallarınız var? Təcrübəli həkimlərdən onlayn konsultasiya alın və sağlam həyat tərzi saxlayın.",
+     doctor: {
+      title: "Həkimsiniz? Platformamıza Qoşulun",
+      subtitle: "TeleTebib-də səhiyyə xidməti təqdimçisi kimi erkən qeydiyyatdan keçin. Onlayn konsultasiyalar verərək qazanc əldə edin və Azərbaycanın aparıcı telemedisin platformasının bir hissəsi olun.",
       features: {
-        experts: "50+ mütəxəssis həkim",
-        availability: "24/7 mövcudluq",
+        experts: "50+ həkimdən ibarət böyüyən şəbəkə",
+        availability: "Çevik iş saatları",
       },
       buttons: {
-        findDoctor: "Həkim gözləmə siyahısına qoşulun",
-        moreArticles: "Daha çox məqalələr",
+        findDoctor: "Həkim kimi qeydiyyat",
+        moreArticles: "Platformamız haqqında öyrənin",
       },
     },
   },
@@ -1811,15 +1811,15 @@ export const ru: Translations = {  header: {
       },
     },
     doctor: {
-      title: "Получить консультацию врача",
-      subtitle: "Есть вопросы о вашем здоровье? Получите онлайн консультацию от опытных врачей и поддерживайте здоровый образ жизни.",
+      title: "Вы врач? Присоединяйтесь к нашей платформе",
+      subtitle: "Зарегистрируйтесь для раннего доступа как поставщик медицинских услуг на TeleTebib. Начните зарабатывать, предоставляя онлайн консультации, и станьте частью ведущей телемедицинской платформы Азербайджана.",
       features: {
-        experts: "50+ врачей-специалистов",
-        availability: "Доступность 24/7",
+        experts: "Растущая сеть из 50+ врачей",
+        availability: "Гибкий рабочий график",
       },
       buttons: {
-        findDoctor: "Присоединиться к списку ожидания врачей",
-        moreArticles: "Больше статей",
+        findDoctor: "Регистрация как врач",
+        moreArticles: "Узнать о нашей платформе",
       },
     },
   },
