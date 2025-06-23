@@ -1,0 +1,19 @@
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: translateY(-12px);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 0.7s infinite;
+}
+
+/* One-time bounce on mount */
+.animate-bounce-once {
+  animation: bounce 0.7s 1;
+}

@@ -44,6 +44,7 @@ import { addToWaitlist, addDoctorToWaitlist } from "@/lib/firebase-services";
 import { getPublishedBlogPosts, BlogPost } from "@/lib/blog-service";
 import { Language, getTranslations, getLanguageFromStorage, saveLanguageToStorage } from "@/lib/localization";
 import { LanguageSelector } from "@/components/ui/language-selector";
+import "@/styles/bounce.css";
 
 // Testimonial type definition
 interface Testimonial {
@@ -495,11 +496,11 @@ export function TelehealthLanding() {  // Language state and translations
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder={t.hero.emailPlaceholder}
                       required
-                      className="px-5 py-3 flex-1 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="px-5 py-3 flex-1 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-md transition-all duration-200"
                     />
                     <button 
                       type="submit"
-                      className={primaryButtonClass}
+                      className={primaryButtonClass + " animate-bounce-once hover:animate-bounce"}
                       style={{ backgroundColor: PRIMARY }}
                     >
                       {t.hero.cta}                    </button>
@@ -2104,14 +2105,15 @@ export function TelehealthLanding() {  // Language state and translations
                   onChange={(e) => setWaitlistEmail(e.target.value)}
                   placeholder={t.waitlist.emailPlaceholder}
                   required
-                  className="px-5 py-3 flex-1 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="px-5 py-3 flex-1 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white shadow-md transition-all duration-200"
                 />
                 <button 
                   type="submit"
-                  className={primaryButtonClass}
+                  className={primaryButtonClass + " animate-bounce-once hover:animate-bounce"}
                   style={{ backgroundColor: PRIMARY }}
                 >
-                  {t.waitlist.cta}                </button>
+                  {t.waitlist.cta}
+                </button>
               </form>
               
               {/* Message display area for waitlist form */}
@@ -2137,7 +2139,8 @@ export function TelehealthLanding() {  // Language state and translations
             {/* Trust indicators for waitlist */}
             <div className="grid grid-cols-2 gap-8 mt-12 max-w-2xl mx-auto">
               <div className="text-center">
-                <span className="text-3xl font-bold block mb-2" style={{ color: PRIMARY }}>500+</span>                <span className="text-sm" style={{ color: FOREGROUND_LIGHT }}>{t.waitlist.stats.waitingList}</span>
+                <span className="text-3xl font-bold block mb-2" style={{ color: PRIMARY }}>500+</span>
+                <span className="text-sm" style={{ color: FOREGROUND_LIGHT }}>{t.waitlist.stats.waitingList}</span>
               </div>
                          
               <div className="text-center">
