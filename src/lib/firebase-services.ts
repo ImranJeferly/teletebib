@@ -27,20 +27,26 @@ export interface DoctorWaitlistEntry {
 // Waitlist functions
 export const addToWaitlist = async (email: string) => {
   try {
+    console.log('Attempting to add to waitlist:', email);
+    
     // Check if email already exists
+    console.log('Checking for existing email...');
     const q = query(collection(db, 'waitlist'), where('email', '==', email));
     const querySnapshot = await getDocs(q);
     
     if (!querySnapshot.empty) {
+      console.log('Email already exists in waitlist');
       return { success: false, error: 'Email already exists in waitlist' };
     }
 
     // Add to waitlist - simplified to just email and timestamp
+    console.log('Adding to waitlist...');
     const docRef = await addDoc(collection(db, 'waitlist'), {
       email,
       timestamp: serverTimestamp()
     });
 
+    console.log('Successfully added to waitlist:', docRef.id);
     return { success: true, id: docRef.id };
   } catch (error: any) {
     console.error('Error adding to waitlist:', error);

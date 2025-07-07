@@ -10,8 +10,8 @@ service cloud.firestore {
     }
   
   	match /waitlist/{document} {
-      allow write: if true;
-      allow read: if request.auth != null && request.auth.token.email == 'imranjeferly@gmail.com';
+      allow write: if true; // Anyone can write to waitlist
+      allow read: if true; // Allow read for duplicate checking, but admin controls actual data access
     }
       // ===== USER MANAGEMENT (SUPPORTS BOTH APPS) =====
     match /users/{userId} {

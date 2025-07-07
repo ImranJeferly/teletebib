@@ -1049,7 +1049,7 @@ export const az: Translations = {  header: {
   
   hero: {
     title: "Onlayn Həkim Xidmətləri ilə Sağlamlığınıza Qayğı Göstərin",
-    subtitle: "Evdən çıxmadan, istənilən vaxt və yerdə peşəkar həkimlərlə əlaqə qurun. TeleTebib, müxtəlif tibbi sahələrdə onlayn konsultasiya və müalicə xidmətləri təqdim edir.",
+    subtitle: "Evdən çıxmadan, istənilən vaxt və hər yerdə peşəkar həkimlərlə əlaqə qurun. TeleTebib, müxtəlif tibbi sahələrdə onlayn konsultasiya və müalicə xidmətləri təqdim edir.",
     emailPlaceholder: "E-mail ünvanınızı daxil edin",
     cta: "Erkən giriş əldə edin",
     privacyNote: "Xidmət haqqında məlumat və başlanğıc tarixini öyrənmək üçün qeydiyyatdan keçin",
